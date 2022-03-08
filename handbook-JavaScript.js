@@ -29,4 +29,7 @@ console.log(bigNumber.toLocaleString('es', { style: 'currency', currency: 'EUR' 
 // 100.000.000,00 €
 
 
+//коли потрібно згенерувати випадкове число в заданому діапазоні
+Math.floor(Math.random() * (max - min)) + min;
+
 
