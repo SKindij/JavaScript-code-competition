@@ -50,10 +50,36 @@ switch (membershipStatus) {
      break
 };
 
-
-
-
-
+//Серед завдань є особливий підтип – коли потрібно подивитися на значення змінної та виконати різний код залежно від цього значення.
+let discount;
+if (memberStatus === "vip") {
+   discount = 0.25;
+} else if (memberStatus === "diamond") {
+   discount = 0.2;
+} else if (memberStatus === "gold" || memberStatus === "silver") {
+   // знижка 10% користувачам статусу золотий та срібний
+   discount = 0.1;
+} else {
+   discount = 0;
+};
+//Код вище працює, але виглядає надмірно - у ньому дуже багато порівнянь. Можна зробити ось так:
+let discount;
+switch (memberStatus) {
+   case "vip":
+     discount = 0.25;
+     break
+   case "diamond":
+     discount = 0.2;
+     break
+   case "gold":
+   case "silver":
+     // можна написати кілька кейсів та зв'язати з одним блоком
+     discount = 0.1;
+     break
+   default:
+     discount = 0;
+     break
+};
 
 
 //Метод tofixed перетворює число в рядок із зазначеною кількістю знаків після коми. Якщо необхідно, число округляється:
