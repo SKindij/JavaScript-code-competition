@@ -33,3 +33,12 @@ console.log(bigNumber.toLocaleString('es', { style: 'currency', currency: 'EUR' 
 Math.floor(Math.random() * (max - min)) + min;
 
 
+/*об'єкт, що зберігається в const, можна мутувати;
+Об'єкти зберігаються за посиланням. Зміна об'єкта не призводить до зміни посилання на нього:*/
+const obj = {
+  a: 5,
+};
+obj.a = 10;
+console.log(obj);
+// { a: 10 };
+
