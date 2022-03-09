@@ -163,3 +163,27 @@ function isInteger(value) {
   return value % 2 == 0
 };
 
+
+//Якщо функція зберігається в об'єкті, це метод цього об'єкта.
+const user = {
+   name: "Alex",
+   greet() {
+     console.log("Hello, my name is Alex")
+   },
+}
+//user.greet – це метод об'єкта user.
+user.greet() // Hello, my name is Alex
+
+
+//У нижньому випадку значення this – охоплює цей об'єкт
+const user = {
+  name: "Alex",
+  greet() {
+    console.log(`Hello, my name is ${this.name}`)
+  },
+}
+user.greet(); // Hello, my name is Alex
+//при заміні імені користувача метод підлаштовується
+user.name = "Max";
+user.greet(); //Hello, my name is Max
+
