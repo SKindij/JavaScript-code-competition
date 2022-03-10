@@ -271,5 +271,17 @@ class Calculator {
     }
   valueOf: () => this.value
 }
+//Створюємо екземпляр класу з початковим станом, що дорівнює 0.
+const calculator = new Calculator();
+
+//функціональний варіант
+function add(a, b) {
+  return a + b
+};
+function subtract(a, b) {
+  return a - b
+};
+subtract(add(add(0, 3), 4), 1); // 6
+
 
 
