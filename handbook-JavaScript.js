@@ -187,3 +187,18 @@ user.greet(); // Hello, my name is Alex
 user.name = "Max";
 user.greet(); //Hello, my name is Max
 
+
+//За угодами конструктори викликають за допомогою ключового слова new, а також називають з великої літери іменником.
+//Наприклад, якщо конструктор буде створювати об'єкти користувачів, ми можемо назвати його User, а використовувати так:
+function User() {
+  this.name = "Alex"
+}
+
+const firstUser = new User()
+firstUser.name === "Alex" // true
+
+//При роботі з функціями-конструкторами легко забути про new та викликати їх неправильно:
+const firstUser = new User() // Правильно.
+const secondUser = User() // Неправильно,
+
+
