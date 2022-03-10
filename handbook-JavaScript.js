@@ -235,4 +235,17 @@ const howOldAmI = getAge.bind({age: 20}).bind({age: 30});
 
 howOldAmI(); //20
 
+/* х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х */
 
+//напишемо невелику функцію для знаходження всіх непарних елементів у масиві
+//Імперативний стиль (набір конкретних команд, які виконуються послідовно одна за одною)
+function onlyOdd(array) {
+  let result = []
+  for (const element of array) {
+    if (element % 2 !== 0) {
+      result.push(element)
+    }
+  };
+  return result;
+  }
+  
