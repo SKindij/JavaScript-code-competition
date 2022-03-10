@@ -201,4 +201,23 @@ firstUser.name === "Alex" // true
 const firstUser = new User() // Правильно.
 const secondUser = User() // Неправильно,
 
+/* х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х */
+
+//Різниця між .call() і .apply() — у тому, як вони приймають аргументи самої функції після this.
+function greet(greetWord, emoticon) {
+  console.log(`${greetWord} ${this.name} ${emoticon}`)
+};
+const user1 = { name: "Alex" };
+const user2 = { name: "Ivan" };
+
+// .call() принимает аргументы списком через запятую:
+greet.call(user1, "Hello,", ":-)") // Hello, Alex :-)
+greet.call(user2, "Good morning,", ":-D") // Good morning, Ivan :-D
+
+// .apply() же — принимает массив аргументов:
+greet.apply(user1, ["Hello,", ":-)"]) // Hello, Alex :-)
+greet.apply(user2, ["Good morning,", ":-D"]) // Good morning, Ivan :-D
+//В іншому вони ідентичні. 
+
+
 
