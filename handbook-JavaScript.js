@@ -219,5 +219,20 @@ greet.apply(user1, ["Hello,", ":-)"]) // Hello, Alex :-)
 greet.apply(user2, ["Good morning,", ":-D"]) // Good morning, Ivan :-D
 //В іншому вони ідентичні. 
 
+/* х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х-х */
+function greet() {
+  console.log(`Hello, ${this.name}`)
+}
+const user1 = { name: "Alex" };
+//Зауважте, що .bind() на відміну від .call() і .apply() не викликає функцію відразу. 
+const greetAlex = greet.bind(user1);
+greetAlex(); // Hello, Alex
+//Натомість він повертає іншу функцію — пов'язану із зазначеним контекстом назавжди. Контекст цієї функції неможливо змінити.
+function getAge() {
+  console.log(this.age);
+};
+const howOldAmI = getAge.bind({age: 20}).bind({age: 30});
+
+howOldAmI(); //20
 
 
