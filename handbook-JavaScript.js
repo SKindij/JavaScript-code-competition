@@ -249,3 +249,9 @@ function onlyOdd(array) {
   return result;
   }
   
+//Декларативний стиль (нам лише важливо, який масив на виході ми хочемо отримати)
+function onlyOdd(array) {
+  return array.filter((element) => element % 2 !== 0)
+}
+
+
