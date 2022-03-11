@@ -293,3 +293,23 @@ function factorial(n) {
 }
 
 
+//У JavaScript теж можна (хоч і з милицями) використовувати предикати для патерн-матчингу. Ми можемо перевіряти результати виразів прямо в case:
+function stringIfAmount(amount) {
+  switch (true) {
+    case amount === 0:
+      return 'Empty!'
+    case 0 < amount && amount < 10:
+      return 'A few'
+    default:
+      return 'Many'
+  }
+}
+
+stringIfAmount(0)
+// Empty!
+
+stringIfAmount(8)
+// A few
+
+stringIfAmount(70)
+// Many
