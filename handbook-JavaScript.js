@@ -284,4 +284,12 @@ function subtract(a, b) {
 subtract(add(add(0, 3), 4), 1); // 6
 
 
+//Рекурсія допомагає висловити деякі завдання у тому вигляді, в якому вони формулюються у математиці.
+function factorial(n) {
+  if (n <= 1) {
+    return 1
+  }
+  return n * factorial(n - 1)
+}
+
 
