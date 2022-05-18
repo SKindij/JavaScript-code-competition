@@ -39,8 +39,8 @@ ourElement.addEventListener('keydown', function (event) {
    document.querySelector('.event').innerHTML = message
 })
 
-
-
+// remove the event handler
+ourElement.removeEventListener('click', handleMouseClick)
 
 
 
