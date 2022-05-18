@@ -1,0 +1,22 @@
+// function can be declared earlier:
+const ourElement = document.querySelector('button');
+  function handleClickFunction(event) {
+    alert('named function');
+  }
+ourElement.addEventListener('click', handleClickFunction);
+
+// or it maybe anonymous:
+element.addEventListener('click', function (event) {
+  alert('anonymous function')
+})
+
+
+
+
+
+
+
+
+
+
+
