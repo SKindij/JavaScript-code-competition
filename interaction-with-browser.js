@@ -52,28 +52,24 @@ someElement.addEventListener('click', function (event) {
   <head></head>
   <body >
     <h1>Living Collection</h1>
-    <h3>При загрузке страницы мы один раз получили все параграфы на странице с помощью getElementsByTagName, их список поддерживается актуальным автоматически</h3>
-    <h2>Сейчас в коллекции: <span id="counter"></span></h2>
+    <h3>when loading the page, we got all the paragraphs once, their list is kept up to date automatically</h3>
+    <h2>Now in collection: <span id="counter"></span></h2>
     <div id="article">
-      <p>Это параграф #1</p>
-      <p>Это параграф #2</p>
+      <p>this is a paragraph #1</p>
+      <p>this is a paragraph #2</p>
     </div>
-    <button id="add">Добавить параграф </button>
-    <button id="remove">Удалить параграф</button>
+    <button id="add">add paragraph</button>
+    <button id="remove">delete paragraph</button>
   </body>
 </html>
-
-
-
 */
-
-function createParagraphElement(number) {
+  function createParagraphElement(number) {
       let newP = document.createElement('p');
-      newP.textContent = 'Это параграф #' + number;
+      newP.textContent = 'this is a paragraph #' + number;
       return newP;
-    }
+  }
 
-    let paragraphs = document.getElementsByTagName('p'); // получаем один раз при загрузке страницы!
+    let paragraphs = document.getElementsByTagName('p');
     let articleDiv = document.getElementById('article');
     let counterSpan = document.getElementById('counter');
     let addButton = document.getElementById('add');
