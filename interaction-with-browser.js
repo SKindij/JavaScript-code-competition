@@ -35,12 +35,17 @@ ourElement.addEventListener('keydown', function (event) {
     document.querySelector('.result').appendChild(messageElement)
       event.target.value = ''
   }
-
    document.querySelector('.event').innerHTML = message
 })
 
 // remove the event handler
 ourElement.removeEventListener('click', handleMouseClick)
+
+// if you want the event to fire only once
+someElement.addEventListener('click', function (event) {
+  console.log('Click!')
+}, { once: true })
+
 
 
 
