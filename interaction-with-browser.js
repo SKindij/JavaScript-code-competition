@@ -89,6 +89,22 @@ someElement.addEventListener('click', function (event) {
     });
 
 
+// for example, you can change the style of the h1 element:
+let element = document.getElementsByTagName("h1");
+
+  element.align = "center";
+  element.style.color = "red";
+
+// the page will display the new content:
+let divElement = document.getElementsByTagName("div")[0];
+divElement.innerHTML = "<p>I was added from JavaScript</p>";
+
+
+
+
+
+
+
 
 
 
