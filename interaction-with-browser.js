@@ -99,9 +99,10 @@ let element = document.getElementsByTagName("h1");
 let divElement = document.getElementsByTagName("div")[0];
 divElement.innerHTML = "<p>I was added from JavaScript</p>";
 
-
-
-
+// by default, fetch call makes a GET request to the specified address
+fetch("http://jsonplaceholder.typicode.com/posts");
+  .then((response) => response.json());
+  .then((data) => data); // Получим ответ [{...}, {...}, {...}, ...]
 
 
 
