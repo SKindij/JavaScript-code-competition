@@ -114,7 +114,7 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
     "Content-type": "application/json; charset=UTF-8",
   },
 })
-  .then((response) => response.json());
+  .then((response) => response.json())
   .then((data) => {
     console.log(data); // {title: "foo", body: "bar", userId: 1, id: 101}
   })
@@ -146,8 +146,8 @@ const controller = new AbortController();
 function fetchData() {
   return fetch("http://jsonplaceholder.typicode.com/posts", {
     signal: controller.signal,
-  });
-    .then((response) => response.json());
+  })
+    .then((response) => response.json())
     .catch((e) => {
       console.log(e);
     });
