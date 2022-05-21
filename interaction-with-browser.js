@@ -119,6 +119,11 @@ fetch("https://jsonplaceholder.typicode.com/posts", {
     console.log(data); // {title: "foo", body: "bar", userId: 1, id: 101}
   })
 
+// request will return an error 404 Not Found
+fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route").catch(
+  () => {
+    console.log("Error occurred!")
+  } ) // Never Fulfilled
 
 
 
