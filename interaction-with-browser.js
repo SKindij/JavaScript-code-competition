@@ -155,8 +155,8 @@ function fetchData() {
 
 fetchData();
 
-// an aborted fetch will return a Promise with an error 'The user aborted a request'.
-controller.abort();
+// an aborted fetch will return a Promise with an error
+controller.abort(); // DOMException: The user aborted a request.
 
 
 
