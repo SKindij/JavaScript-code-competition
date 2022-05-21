@@ -187,6 +187,17 @@ function handleSubmit(event) {
 form.addEventListener("submit", handleSubmit);
 
 
-
+// element.dataset allows you to read or set any data attributes on an HTML element.
+/*
+<h1>Известные ситхи</h1>
+<ul>
+  <li data-id="1541" data-episode="1">Дарт Мол</li>
+  <li data-id="9434" data-episode="4">Дарт Вейдер</li>
+  <li data-id="5549" data-episode="4">Дарт Сидиус</li>
+</ul>
+*/
+const items = document.querySelectorAll('li')
+  const firstItem = items[0]
+firstItem.dataset; // { id: '1541', episode: '1' }
 
 
