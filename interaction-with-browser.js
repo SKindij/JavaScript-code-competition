@@ -100,10 +100,24 @@ let divElement = document.getElementsByTagName("div")[0];
 divElement.innerHTML = "<p>I was added from JavaScript</p>";
 
 // by default, fetch call makes a GET request to the specified address
-fetch("http://jsonplaceholder.typicode.com/posts");
-  .then((response) => response.json());
-  .then((data) => data); // Получим ответ [{...}, {...}, {...}, ...]
+const newPost = {
+  title: "foo",
+  body: "bar",
+  userId: 1,
+}
 
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST",
+  body: JSON.stringify(newPost), // request body in JSON format
+  headers: {
+    // adding the necessary headers
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+  .then((response) => response.json());
+  .then((data) => {
+    console.log(data); // {title: "foo", body: "bar", userId: 1, id: 101}
+  })
 
 
 
