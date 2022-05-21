@@ -139,7 +139,24 @@ fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route")
     console.log(err)
   }) // Error: Error occurred!
 
+/* Sometimes it may be necessary to abort the request, for example, when the user's authorization has expired 
+or the user wants to cancel the request on their own (canceled the download of the file). */
+const controller = new AbortController();
 
+function fetchData() {
+  return fetch("http://jsonplaceholder.typicode.com/posts", {
+    signal: controller.signal,
+  });
+    .then((response) => response.json());
+    .catch((e) => {
+      console.log(e);
+    });
+}
+
+fetchData();
+
+// an aborted fetch will return a Promise with an error 'The user aborted a request'.
+controller.abort();
 
 
 
