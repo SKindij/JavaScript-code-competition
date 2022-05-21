@@ -196,8 +196,17 @@ form.addEventListener("submit", handleSubmit);
   <li data-id="5549" data-episode="4">Дарт Сидиус</li>
 </ul>
 */
-const items = document.querySelectorAll('li')
-  const firstItem = items[0]
+const items = document.querySelectorAll('li');
+  const firstItem = items[0];
+  const secondItem = items[1];
+
 firstItem.dataset; // { id: '1541', episode: '1' }
+secondItem.dataset.side = 'evil';
+
+
+
+
+
+
 
 
