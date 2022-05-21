@@ -159,6 +159,33 @@ fetchData();
 controller.abort(); // DOMException: The user aborted a request.
 
 
+// using fetch, you can upload files to the server, for example, when a user wants to upload their avatar to a profile
+/* HTML
+<form id="form">
+  <input type="file" id="avatar">
+  <button type="submit">Загрузить</button>
+</form>
+*/
+const form = document.getElementById("form")
+  const fileInput = document.getElementById("avatar")
+
+function handleSubmit(event) {
+  event.preventDefault();
+    const formData = new FormData()
+      // add files from input to data
+      for (let i = 0; i < fileInput.files.length; i++) {
+        const file = fileInput.files[i]
+        formData.append("avatar", file, file.name)
+      }
+    // sending files to the server
+    fetch("https://backend.com/api/upload", {
+      method: "POST",
+      body: formData,
+    })
+}
+
+form.addEventListener("submit", handleSubmit);
+
 
 
 
