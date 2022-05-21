@@ -203,9 +203,13 @@ const items = document.querySelectorAll('li');
 firstItem.dataset; // { id: '1541', episode: '1' }
 secondItem.dataset.side = 'evil';
 
+// to rewrite the style of an element completely, you can use
+element.style.cssText = "color: blue; border: 1px solid black";
+  element.setAttribute("style", "color:red; border: 1px solid blue;");
 
-
-
+// to update the value of a specific property
+element.style.color = "red"
+element.style.fontFamily = "Arial"
 
 
 
