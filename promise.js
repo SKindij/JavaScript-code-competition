@@ -28,15 +28,14 @@ const p = new Promise(function(resolve, reject) {
 });
 
 p.then(data => {
-  const p2 = new Promise((resokve, reject) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
-      backendData.modified = true;
+      data.modified = true;
       resolve(data); 
     }, 2000);
   });  
- p2.then(clientData => {
-   console.log('data received', clientData);
- }) 
-});
+}).then(clientData => {
+  console.log('data received', clientData);
+})
 
 
