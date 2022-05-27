@@ -23,12 +23,20 @@ const p = new Promise(function(resolve, reject) {
         port: 2000,
         status: 'working'
       }
-    resolve();
+    resolve(backendData);
   }, 2000);
 });
 
-p.then(() => {
- console.log('promise resolved'); 
+p.then(data => {
+  const p2 = new Promise((resokve, reject) => {
+    setTimeout(() => {
+      backendData.modified = true;
+      resolve(data); 
+    }, 2000);
+  });  
+ p2.then(clientData => {
+   console.log('data received', clientData);
+ }) 
 });
 
 
