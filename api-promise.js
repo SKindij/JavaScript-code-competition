@@ -1,3 +1,17 @@
+/*
+  The fetch function takes two parameters:
+    url - the address to which you want to make a request
+    options (optional) - a configuration object where you can set the request method, request body, headers, and more
+*-
+
+
+
+
+
+
+
+
+
 /* below in comments is the somewhat cumbersome approach
 console.log('request data...');
 setTimeout(() => {
@@ -37,5 +51,13 @@ p.then(data => {
 }).then(clientData => {
   console.log('data received', clientData);
 })
+
+
+
+
+
+
+
+
 
 
