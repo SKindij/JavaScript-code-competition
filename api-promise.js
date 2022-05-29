@@ -2,15 +2,25 @@
   The fetch function takes two parameters:
     url - the address to which you want to make a request
     options (optional) - a configuration object where you can set the request method, request body, headers, and more
-*-
+*/
+const newPost = {
+  title: "foo",
+  body: "bar",
+  userId: 1,
+}
 
-
-
-
-
-
-
-
+fetch("https://jsonplaceholder.typicode.com/posts", {
+  method: "POST", // here may be GET, PUT, DELETE too
+  body: JSON.stringify(newPost), // request body in JSON format
+  headers: {
+    // adding necessary headers
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data) // {title: "foo", body: "bar", userId: 1, id: 101}
+  })
 
 /* below in comments is the somewhat cumbersome approach
 console.log('request data...');
