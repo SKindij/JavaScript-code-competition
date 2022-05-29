@@ -63,6 +63,19 @@ p.then(data => {
 })
 
 
+// to handle a request error, you need to pay attention to the ok field in the Response object
+fetch("https://jsonplaceholder.typicode.com/there-is-no-such-route")
+  .then((response) => {
+    // we check the success of the request and throw an error
+    if (!response.ok) {
+      throw new Error("Error occurred!")
+    }
+    return response.json()
+  })
+  // now let's get here, because an error has been thrown
+  .catch((err) => {
+    console.log(err)
+  }) // Error: Error occurred!
 
 
 
