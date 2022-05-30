@@ -34,6 +34,24 @@ const flashLightController2 = {
   <button type="button" name="daylight">Day light</button>
   <button type="button" name="nightlight">Night light</button>
 */
+const flashLightView = {
+  redraw() {
+    const { isOn, color } = flashLightModel;
+    const flash = document.querySelector(".flashlight");
+
+    flash.classList.add(`has-color-${color}`);
+    if (isOn) {
+      flash.classList.add("is-on");
+    }
+  },
+};
+
+flashLightView.redraw();
+
+
+
+
+
 
 
 
