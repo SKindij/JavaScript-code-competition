@@ -1,3 +1,4 @@
+// MVC (Model-View-Controller)
 // Let's imagine that we want to write a flashlight application.
 // It will have two states: on and off. It will also have day and night light buttons.
 // In the model, we will hold the state of the flashlight.
@@ -26,8 +27,13 @@ const flashLightController2 = {
   },
 };
 
-
-
+// The view shows the user the data from the model in a convenient and understandable way.
+/* HTML
+<div class="flashlight"></div>
+  <button type="button" name="power">Turn on</button>
+  <button type="button" name="daylight">Day light</button>
+  <button type="button" name="nightlight">Night light</button>
+*/
 
 
 
