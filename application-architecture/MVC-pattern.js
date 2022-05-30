@@ -5,7 +5,7 @@ const flashLightModel = {
   isOn: false,
   color: "blue",
 };
-
+// When the user turns on the flashlight, the isOn field should be set to true, which will be the responsibility of the controller.
 
 
 
