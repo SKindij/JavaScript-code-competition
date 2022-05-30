@@ -34,23 +34,31 @@ const flashLightController2 = {
   <button type="button" name="daylight">Day light</button>
   <button type="button" name="nightlight">Night light</button>
 */
-const flashLightView = {
+const flashLightView1 = {
   redraw() {
     const { isOn, color } = flashLightModel;
     const flash = document.querySelector(".flashlight");
 
-    flash.classList.add(`has-color-${color}`);
-    if (isOn) {
-      flash.classList.add("is-on");
-    }
+      flash.classList.add(`has-color-${color}`);
+      if (isOn) {
+        flash.classList.add("is-on");
+      }
   },
 };
 
-flashLightView.redraw();
+flashLightView1.redraw();
 
+// code for handling events that the view will give to the controller
+const flashLightView2 = {
+  initEvents() {
+    const powerButton = document.querySelector(`[name="power"]`);
+    powerButton.addEventListener("click", () => flashLightController1.toggle());
 
+    // code for events of other buttons
+  },
+};
 
-
+// When using the MVC architecture, we define how the components will communicate with each other - that is, we define data flows.
 
 
 
