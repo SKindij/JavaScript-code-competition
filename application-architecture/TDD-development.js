@@ -42,7 +42,18 @@ it("returns the result of dividing the first by the second", () => {
   });
 });
 
-
+// Let's move on to fractions now.
+describe("when given 2 numbers that can't be equally divided", () => {
+  it("should return the division result with 1 digit after the decimal point", () => {
+    const result = divide(10, 3);
+    const expected = 3.3;
+    expect(result).toEqual(expected);
+  });
+});
+// Let's start implementing the functionality.
+function divide(a, b) {
+  return Number((a / b).toFixed(1));
+}
 
 
 
