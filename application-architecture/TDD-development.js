@@ -78,7 +78,7 @@ function divide(a, b, settings = defaultSettings) {
   return Number((a / b).toFixed(precision));
 }
 
-
+// It remains now to provide for one case: division by zero
 
 
 
