@@ -64,6 +64,19 @@ describe("when given a precision value", () => {
   });
 });
 
+// Let's add an object with settings to pass the numbers after the decimal point:
+function divide(a, b, settings = {}) {
+  const { precision } = settings;
+  return Number((a / b).toFixed(precision || 1));
+}
+
+// Refactoring settings
+const defaultSettings = { precision: 1 };
+
+function divide(a, b, settings = defaultSettings) {
+  const { precision } = settings;
+  return Number((a / b).toFixed(precision));
+}
 
 
 
