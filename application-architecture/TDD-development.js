@@ -21,8 +21,26 @@ function divide(a, b) {
 // If the test never fails, then it doesn't test anything.
 const result = divide(10, 5);
 const expected = 2;
-expect(result).toEqual(expected);
-// expect(received).toEqual(expected): Expected: 2 >> Received: null
+expect(result).toEqual(expected); // expect(received).toEqual(expected): Expected: 2 >> Received: null
+
+//Now that our test is failing for the right reason, we can fix it.
+function divide(a, b) {
+  return a / b;
+}
+
+//test code can be improved
+it("returns the result of dividing the first by the second", () => {
+  const testCases = [
+    { a: 10, b: 5, expected: 2 },
+    { a: 15, b: 5, expected: 3 },
+    { a: 9, b: 3, expected: 3 },
+  ];
+
+  testCases.forEach(({ a, b, expected }) => {
+    const result = divide(a, b);
+    expect(result).toEqual(expected);
+  });
+});
 
 
 
