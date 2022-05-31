@@ -13,6 +13,16 @@ describe('when given 2 numbers', () => {
   it.todo('returns the result of dividing the first by the second')
 })
 
+//Now let's create a function that we will test:
+function divide(a, b) {
+  // before we start implementing real functionality, we need to be in the "red zone"
+  return null
+}
+// If the test never fails, then it doesn't test anything.
+const result = divide(10, 5);
+const expected = 2;
+expect(result).toEqual(expected);
+// expect(received).toEqual(expected): Expected: 2 >> Received: null
 
 
 
