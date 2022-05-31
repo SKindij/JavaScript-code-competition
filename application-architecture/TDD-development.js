@@ -79,6 +79,12 @@ function divide(a, b, settings = defaultSettings) {
 }
 
 // It remains now to provide for one case: division by zero
+describe("when tried to divide by 0", () => {
+  it("should throw an error", () => {
+    const attempt = () => divide(10, 0);
+    expect(attempt).toThrow("I'm sorry. I'm afraid I can't do that.");
+  });
+});
 
 
 
