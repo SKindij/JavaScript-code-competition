@@ -85,7 +85,12 @@ describe("when tried to divide by 0", () => {
     expect(attempt).toThrow("I'm sorry. I'm afraid I can't do that.");
   });
 });
-
+// And now let's update the function code:
+function divide(a, b, settings = defaultSettings) {
+  if (b === 0) throw new Error("I'm sorry. I'm afraid I can't do that.");
+  const { precision } = settings;
+  return Number((a / b).toFixed(precision));
+}
 
 
 
