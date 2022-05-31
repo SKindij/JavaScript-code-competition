@@ -55,6 +55,16 @@ function divide(a, b) {
   return Number((a / b).toFixed(1));
 }
 
+// Now let's make it so that users can specify the number of decimal places they need.
+describe("when given a precision value", () => {
+  it("should return the division result with as many decimal places as there are in the settings", () => {
+    const result = divide(10, 3, { precision: 2 });
+    const expected = 3.33;
+    expect(result).toEqual(expected);
+  });
+});
+
+
 
 
 
