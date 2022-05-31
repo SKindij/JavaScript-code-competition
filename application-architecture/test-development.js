@@ -91,6 +91,29 @@ function divide(a, b, settings = defaultSettings) {
   const { precision } = settings;
   return Number((a / b).toFixed(precision));
 }
+// ==========================================================================
 
+// If the function is pure, depending only on the passed arguments, then checking the assumption will be simple:
+function add(a, b) {
+  return a + b;
+}
+
+describe('when called with `a` and `b`', () => {
+  it('returns the sum of those numbers', () => {
+    const result = add(40, 2)
+    expect(result).toEqual(42)
+  })
+})
+
+// But if the function depends on the outside world (it has side effects), then it becomes more difficult to check its work:
+function addRandom(a) {
+  return a + Math.random();
+}
+
+function toggleTheme() {
+  ourSuperApp.toggleClassName('dark-theme');
+  ourSuperApp.userChangedTheme = true;
+}
+// To test such functions, it is most convenient to use dummy objects.
 
 
