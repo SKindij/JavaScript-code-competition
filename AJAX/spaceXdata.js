@@ -18,9 +18,25 @@ dragonsXHR.send();
 fetch('https://api.spacexdata.com/v4/dragons/')
   .then(response => response.json())
   .then(data => console.log(data));
+// the callbacks will be called by the promise directly, and not through the event loop
 
+// Promises are also useful for handling other asynchronous situations not just API calls
+const asyncJob = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Shrek: No!');
+    reject({
+      place: 'Road'
+    });
+  });  
+});
 
-
-
-
-
+asyncJob
+  .then((data) => {
+    console.log(data);
+    console.log("Donkey: Oh, finally! Wow!");
+  })
+  catch((data) => {
+    console.log(data);
+    console.log("Donkey: This is why nobody likes ogres.");
+  });  
+    
