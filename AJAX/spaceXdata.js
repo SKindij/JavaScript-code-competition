@@ -35,8 +35,24 @@ asyncJob
     console.log(data);
     console.log("Donkey: Oh, finally! Wow!");
   })
-  catch((data) => {
+  .catch((data) => {
     console.log(data);
     console.log("Donkey: This is why nobody likes ogres.");
   });  
     
+// the resolved data is available in the callbacks
+const asyncJob = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Fiona: Yes!');
+    resolve({
+      place: 'Castle'
+    });
+  });  
+});
+
+asyncJob
+  .then((data) => {
+    console.log(data);
+    console.log("Donkey: Oh, finally! Wow!");
+  });
+  
