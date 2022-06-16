@@ -56,3 +56,41 @@ asyncJob
     console.log("Donkey: Oh, finally! Wow!");
   });
   
+// .then() can return a new promise as well
+const asyncJob = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    console.log('Fiona: Yes!');
+    resolve({
+      place: 'Castle'
+    });
+  }, 500);  
+});
+
+asyncJob
+  .then((data) => {
+    console.log(data);
+    console.log("Donkey: Oh, finally! Wow!");
+  })
+  .then(() => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        console.log("Donkey: Itis going to be champagne wishes from now on.");
+        resolve({
+          place: 'City'
+        });
+      }, 10000);
+    });
+  }) 
+  .then((data) => {
+    console.log(data);
+    console.log("Donkey: Hey, good-looking!. We'll be back to pick to you.");
+});
+
+
+
+
+
+
+
+
+
