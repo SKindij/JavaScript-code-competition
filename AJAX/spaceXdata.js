@@ -11,10 +11,16 @@ dragonXHR.onload = function() {
   xhr.open("GET", 'https://api.spacexdata.com/v4/dragons/' + id);
   xhr.send();
 };
-  
 dragonsXHR.open("GET", 'https://api.spacexdata.com/v4/dragons/');
 dragonsXHR.send();  
-  
-  
-  
+
+// With ES6, however, we have fetch API
+fetch('https://api.spacexdata.com/v4/dragons/')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
+
+
+
+
 
