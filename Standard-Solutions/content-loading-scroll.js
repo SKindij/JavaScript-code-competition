@@ -1,6 +1,7 @@
 // On the web, it is considered good practice not to load anything extra into the browser.
 // There are many strategies for dealing with redundant code: code splitting and minification, image optimization, caching, refactoring and removal of old code.
 
+// we will make a stub for the server to simulate requests to it:
 // Let's create the database first:
 const post = {
   title: "Post title",
@@ -29,10 +30,22 @@ const server = {
   },
 }
 
+// We will call the method to receive new posts using await
+const response = await server.posts();
 
-
-
-
+// We want to load new content when the user scrolls to the bottom of the page.
+/* HTML
+<article class="post">
+  <h1>Post title</h1>
+  <p>
+    The text of the post in the world's best social network Switter.
+  </p>
+  <footer>
+    <button type="button">❤️ 20</button>
+    <button type="button">🔄 20</button>
+  </footer>
+</article>
+*/
 
 
 
