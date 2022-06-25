@@ -70,4 +70,8 @@ BEHAVIOURAL Patterns: MEMENTO, MEDIATOR, OBSERVER;
 Architectural Patterns: MVC, MVP, MVVM;
 */
 
-
+/*
+DRY 		- 	Don’t Repeat Yourself
+KISS 		- 	Keep It Simple, Stupid
+YAGNI  	- 	You Ain’t Gonna Need It
+*/
