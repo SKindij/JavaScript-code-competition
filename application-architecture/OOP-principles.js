@@ -1,4 +1,4 @@
-// OOP
+// OOP Design patterns are design level solutions for recurring problems in software development. 
 // Inheritance - the ability to acquire the properties of existing classes and create child ones.
 class Character {
   constructor (power) {
@@ -61,6 +61,13 @@ console.log(topHero);
   Liskov substitution
   Interface segregation 
   Dependency Inversion 
+*/
+
+/* 
+CREATIONAL Patterns: SINGLETON, FACTORY METHOD, BUILDER, PROTOTYPE;
+STRUCTURAL Patterns: COMPOSITE, DECORATOR, FACADE, PROXY;
+BEHAVIOURAL Patterns: MEMENTO, MEDIATOR, OBSERVER;
+Architectural Patterns: MVC, MVP, MVVM;
 */
 
 
