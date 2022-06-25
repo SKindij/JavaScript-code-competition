@@ -14,6 +14,7 @@ class HeroCharacter extends Character {
   sayPhrase = () => console.log(this.phrase);
 }  
 
+// Encapsulation - object's capacity to "decide" which information it exposes to "the outside“ and which it doesn’t.
 class TopHero extends HeroCharacter {
   #secretPower;
   constructor (power, phrase, secretPower) {
@@ -25,10 +26,26 @@ class TopHero extends HeroCharacter {
   saySecretPower = () => console.log(this.#secretPower);
 }
 
-let topHero = new TopHero(power: 300, phrase: 'I am super top hero best', secretPower: 'very secret indeed');
+let topHero = new TopHero(300, 'I am super top hero best', 'very secret indeed');
 topHero.sayPhrase();
 topHero.sayPower();
 topHero.saySecretPower();
+
+// Abstraction - only expose to the outside the properties and methods that you're going to use. 
+class Villain {
+  #birthYear;
+  constructor(name, birthYear) {
+    this.#birthYear = birthYear;
+    this.name = name;
+  }
+  getAge = () => console.log(this.#calculateAge());
+  #calculateAge = () => new Date().getFullYear() - this.#birthYear;
+}
+
+let villain = new Villain('Evil', 1990);
+console.log(villain);
+villain.getAge();
+
 
 
 
