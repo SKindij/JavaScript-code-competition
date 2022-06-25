@@ -1,3 +1,4 @@
+// OOP
 // Inheritance - the ability to acquire the properties of existing classes and create child ones.
 class Character {
   constructor (power) {
@@ -51,4 +52,15 @@ topHero.sayPhrase();
 topHero.sayPower();
 topHero.saySecretPower();
 console.log(topHero);
+
+// SOLID principles are a set of five principles that ensure good Object-Oriented Design. 
+// They instruct us on how to structure our functions and classes to make them as reliable, maintainable, and adaptable as feasible.
+/*
+  Single Responsibility 
+  Open-Closed
+  Liskov substitution
+  Interface segregation 
+  Dependency Inversion 
+*/
+
 
