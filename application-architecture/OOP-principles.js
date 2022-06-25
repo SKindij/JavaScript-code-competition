@@ -25,6 +25,10 @@ class TopHero extends HeroCharacter {
   saySecretPower = () => console.log(this.#secretPower);
 }
 
+let topHero = new TopHero(power: 300, phrase: 'I am super top hero best', secretPower: 'very secret indeed');
+topHero.sayPhrase();
+topHero.sayPower();
+topHero.saySecretPower();
 
 
 
