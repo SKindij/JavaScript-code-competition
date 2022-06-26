@@ -71,7 +71,28 @@ Architectural Patterns: MVC, MVP, MVVM;
 */
 
 /*
-DRY 		- 	Don’t Repeat Yourself
-KISS 		- 	Keep It Simple, Stupid
-YAGNI  	- 	You Ain’t Gonna Need It
+DRY 	- Don’t Repeat Yourself
+KISS 	- Keep It Simple, Stupid
+YAGNI - You Ain’t Gonna Need It
 */
+
+// Inheritance using Classes
+class ToyHaracter {
+  talk() {
+    return 'I am toy hero!';
+  }
+}
+  const teddyBear = new ToyHaracter();
+  const woodenBear = new ToyHaracter();
+  const plasticBear = new ToyHaracter();
+    teddyBear.talk(); // I am toy hero!
+// To update the function for both instances you only have to do it once:
+ToyHaracter.prototype.talk = function () {
+  return 'I am toy hero with new and improved Talking';
+}; 
+    woodenBear.talk(); // I am toy hero with new and improved Talking
+
+
+
+
+
