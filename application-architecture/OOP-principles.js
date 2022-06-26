@@ -101,3 +101,50 @@ class FlyingToy extends ToyHaracter {
 const flyingBear = new FlyingToy();
   flyingBear.talk();
   flyingBear.fly();
+
+// JS prototypal inheritance
+const Human = {
+  kind: 'human'
+}
+const serhii = Object.create(Human);
+    serhii.age = 41;
+        serhii;
+        serhii.kind;
+
+// what is Factory Function?
+function personFactory(name) {
+  return {
+    greating() {
+      return `Hello! I am ${name}`
+    }
+  }
+}
+const me = personFactory('Serhii');
+  me.greating();
+const she = personFactory('Tania');
+  she.greating();
+
+// what is Factory Function?
+function createElement(type, text, color) {
+  const el = document.createElement(type);
+    el.innerText = text;
+    el.style.color = color;
+      document.body.append(el);
+  return {
+    el,
+    setText(newText) {
+      el.innerText = newText;
+    },
+    setColor(newColor) {
+      el.style.color = newColor;
+    }
+  }
+}
+const h2 = createElement('h2', 'it is new paragraph', 'blue');
+const h3 = createElement('h3', 'it is next paragraph', 'orange');
+
+
+
+
+
+
