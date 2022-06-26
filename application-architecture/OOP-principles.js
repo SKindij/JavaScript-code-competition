@@ -153,6 +153,22 @@ function Personage(name) {
 const svinFather = new Personage('Father Svin');
   svinFather.greating(); // 'Hello! I am Father Svin'
 
+// Factory function vs Constructor vs Class
+const myCoolProto = {
+  talk() {
+    return `Hello, I am ${this.name}!`
+  }
+}  
+function createCoolPerso(name) {
+  return Object.create(myCoolProto, {
+    name: {
+      value: name
+    }
+  })
+}
+const he = createCoolPerso('Makson');
+  he; 
+
 
 
 
