@@ -62,14 +62,6 @@ console.log(topHero);
   Interface segregation 
   Dependency Inversion 
 */
-
-/* 
-CREATIONAL Patterns: SINGLETON, FACTORY METHOD, BUILDER, PROTOTYPE;
-STRUCTURAL Patterns: COMPOSITE, DECORATOR, FACADE, PROXY;
-BEHAVIOURAL Patterns: MEMENTO, MEDIATOR, OBSERVER;
-Architectural Patterns: MVC, MVP, MVVM;
-*/
-
 /*
 DRY 	- Don’t Repeat Yourself
 KISS 	- Keep It Simple, Stupid
@@ -168,6 +160,79 @@ function createCoolPerso(name) {
 }
 const he = createCoolPerso('Makson');
   he; 
+
+/* 
+CREATIONAL Patterns: SINGLETON, FACTORY METHOD, BUILDER, PROTOTYPE;
+STRUCTURAL Patterns: COMPOSITE, DECORATOR, FACADE, PROXY;
+BEHAVIOURAL Patterns: MEMENTO, MEDIATOR, OBSERVER;
+Architectural Patterns: MVC, MVP, MVVM;
+*/
+// CONSTRUCTOR
+class Server {
+  constructor(name, ip) {
+    this.name = name
+    this.ip = ip
+  }
+  getUrl() {
+    return `https://${this.ip}:80`
+  }
+}
+const aws = new Server('AWS German', '82.21.21.32')
+  console.log(aws.getUrl()) // https://82.21.21.32:80
+
+// FACTORY
+class SimpleMembership {
+  constructor(name) {
+    this.name = name;
+    this.cost = 50;
+  }
+}
+class StandardMembership {
+  constructor(name) {
+    this.name = name;
+    this.cost = 150;
+  }
+}
+class PremiumMembership {
+  constructor(name) {
+    this.name = name;
+    this.cost = 500;
+  }
+}
+
+class MemberFactory {
+  static list = {
+    simple: SimpleMembership,
+    standard: StandardMembership,
+    premium: PremiumMembership
+  }
+
+  create(name, type = 'simple') {
+    const Membership = MemberFactory.list[type] || MemberFactory.list.simple
+    const member = new Membership(name)
+    member.type = type
+    member.define = function() {
+      console.log(`${this.name} (${this.type}): ${this.cost}`)
+    }
+    return member
+  }
+}
+
+const factory = new MemberFactory()
+
+const members = [
+  factory.create('Vladilen', 'simple'),
+  factory.create('Elena', 'premium'),
+  factory.create('Vasilisa', 'standard'),
+  factory.create('Ivan', 'premium'),
+  factory.create('Petr')
+]
+
+members.forEach(m => {
+  m.define()
+})
+
+
 
 
 
