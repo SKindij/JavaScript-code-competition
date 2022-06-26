@@ -76,23 +76,28 @@ KISS 	- Keep It Simple, Stupid
 YAGNI - You Ain’t Gonna Need It
 */
 
-// Inheritance using Classes
-class ToyHaracter {
-  talk() {
-    return 'I am toy hero!';
-  }
+// Inheritance using Classes AND Inheritance using a Constructor Function
+class ToyHaracter {  // function ToyHaracter() {};
+  talk() {           // ToyHaracter.prototype.talk = function () {
+    return 'I am toy hero!'; //  return 'I am toy hero!';
+  }                       // }
 }
   const teddyBear = new ToyHaracter();
   const woodenBear = new ToyHaracter();
   const plasticBear = new ToyHaracter();
-    teddyBear.talk(); // I am toy hero!
+    teddyBear.talk(); // or plasticBear.talk();
 // To update the function for both instances you only have to do it once:
 ToyHaracter.prototype.talk = function () {
   return 'I am toy hero with new and improved Talking';
 }; 
     woodenBear.talk(); // I am toy hero with new and improved Talking
 
-
-
-
-
+// Extending a Class using 'extends'
+class FlyingToy extends ToyHaracter {
+  fly() {
+    return 'I can fly!';
+  }
+}
+const flyingBear = new FlyingToy();
+  flyingBear.talk();
+  flyingBear.fly();
