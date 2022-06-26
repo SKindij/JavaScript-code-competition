@@ -143,6 +143,15 @@ function createElement(type, text, color) {
 const h2 = createElement('h2', 'it is new paragraph', 'blue');
 const h3 = createElement('h3', 'it is next paragraph', 'orange');
 
+// what is Comstructor Function?
+function Personage(name) {
+  this.name = name;
+  this.greating = () => {
+    return `Hello! I am ${this.name}`
+  }  
+}  
+const svinFather = new Personage('Father Svin');
+  svinFather.greating(); // 'Hello! I am Father Svin'
 
 
 
