@@ -267,7 +267,36 @@ console.log(mongo.getData())
 const mysql = new Database('MySQL')
 console.log(mysql.getData())
 
+// FLYWEIGHT 
+class CarEU {
+  constructor(model, price) {
+    this.model = model
+    this.price = price
+  }
+}
+class CarFactory {
+  constructor() {
+    this.cars = []
+  }
+  create(model, price) {
+    const candidate = this.getCar(model)
+    if (candidate) {
+      return candidate
+    }
+    const newCar = new CarEU(model, price)
+    this.cars.push(newCar)
+    return newCar
+  }
+  getCar(model) {
+    return this.cars.find(car => car.model === model)
+  }
+}
 
+const factoryCarEU = new CarFactory()
+  const bmwX6 = factoryCarEU.create('bmw', 10000)
+  const audi = factoryCarEU.create('audi', 12000)
+  const bmwX3 = factoryCarEU.create('bmw', 8000)
+console.log(bmwX3 === bmwX6)
 
 
 
