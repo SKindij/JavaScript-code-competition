@@ -206,7 +206,6 @@ class MemberFactory {
     standard: StandardMembership,
     premium: PremiumMembership
   }
-
   create(name, type = 'simple') {
     const Membership = MemberFactory.list[type] || MemberFactory.list.simple
     const member = new Membership(name)
@@ -218,22 +217,33 @@ class MemberFactory {
   }
 }
 
-const factory = new MemberFactory()
-
+const factoryMembers = new MemberFactory()
 const members = [
-  factory.create('Vladilen', 'simple'),
-  factory.create('Elena', 'premium'),
-  factory.create('Vasilisa', 'standard'),
-  factory.create('Ivan', 'premium'),
-  factory.create('Petr')
+  factoryMembers.create('Vladilen', 'simple'),
+  factoryMembers.create('Elena', 'premium'),
+  factoryMembers.create('Vasilisa', 'standard'),
+  factoryMembers.create('Ivan', 'premium'),
+  factoryMembers.create('Petr')
 ]
 
-members.forEach(m => {
-  m.define()
+members.forEach(m => { m.define() })
+
+// PROTOTYPE
+const carUA = {
+  wheels: 4,
+  init() {
+    console.log(`It has ${this.wheels} whels, my owner is ${this.owner}`)
+  }
+}
+
+const carWithOwner = Object.create(carUA, {
+  owner: {
+    value: 'Demian'
+  }
 })
 
-
-
+console.log(carWithOwner.__proto__ === carUA)
+carWithOwner.init()
 
 
 
