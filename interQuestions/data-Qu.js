@@ -15,6 +15,18 @@ b == b; // => true
 typeof null == 'object'; // => true
 !![] == true; 	// => true
 
+// What will the code below output to the console?
+console.log(+"1" + "1" + "2"); // => 112
+console.log( "A" - "B" + "2"); // => NaN2
+console.log( "A" - "B" + 2); // => NaN
+
+console.log(typeof 1); // => number
+console.log(typeof String); // => function
+console.log(typeof typeof 1); // => string
+
+// What does the above statement evaluate to?  
+4 + 3 + 2 + "1"; // => '91'
+
 
 
 
