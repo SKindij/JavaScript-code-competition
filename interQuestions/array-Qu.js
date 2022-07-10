@@ -6,8 +6,12 @@ var arr = [];
   arr.foo = 'd'; // create a property with an arbitrary name
 alert(arr.length); // => 11
 
-
-
+// it is necessary to duplicate the data inside the array
+function duplicate(arr) {
+    return arr.concat(arr);
+}
+duplicate([1,2,3,4,5]);  // => [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
+    
 
 
 

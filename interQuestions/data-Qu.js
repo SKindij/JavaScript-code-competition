@@ -34,6 +34,10 @@ console.log(result===NaN); // => false
 typeof NaN; // => 'number'
 typeof null; // => 'object'
 
+// What will be returned by each of these?
+console.log("hello" || "world") // => hello
+console.log("foo" && "bar") // => bar
 
+console.log(0.1 + 0.2 == 0.3); // => false
 
 
