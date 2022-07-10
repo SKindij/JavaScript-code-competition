@@ -47,8 +47,21 @@ function f() {this.answer = "green"; return "brown";};
 function f(val) {return "blue";}
 alert (new f().answer);  // => undefined
 
+// How would you make this work?
+const add = (a, b) => {
+  if (b !== undefined) return a + b;
+    return (d) => a + d
+}
 
+add(2, 5); // => 7
+add(2)(5); // => 7
 
+// What will the code below output to the console and why?
+(function(){
+    var a = b = 3; //it is actually shorthand for: b = 3; var a = b;
+})();
+console.log("a defined? " + (typeof a !== 'undefined')); // => false
+console.log("b defined? " + (typeof b !== 'undefined')); // => true
 
 
 

@@ -10,6 +10,18 @@
         console.log(4);
 }) (); // => 1, 4, 3, 2
 
+// What does the following code print?
+console.log('one');
+  setTimeout(function() {
+      console.log('two');
+  }, 0);
+Promise.resolve().then(function() {
+  console.log('three');
+})
+console.log('four'); // => one   four   three   undefined   two
+
+
+
 
 
 
