@@ -27,8 +27,12 @@ console.log(typeof typeof 1); // => string
 // What does the above statement evaluate to?  
 4 + 3 + 2 + "1"; // => '91'
 
+// What does console.log output?
+var result = "ten" * 2;
+console.log(result===NaN); // => false
 
-
+typeof NaN; // => 'number'
+typeof null; // => 'object'
 
 
 
