@@ -63,8 +63,23 @@ add(2)(5); // => 7
 console.log("a defined? " + (typeof a !== 'undefined')); // => false
 console.log("b defined? " + (typeof b !== 'undefined')); // => true
 
+// Consider the two functions below. Will they both return the same thing? 
+function foo1()
+{
+  return {
+    bar: "hello"
+  };
+}
 
+function foo2()
+{
+  return
+  {
+    bar: "hello"
+  };
+}
 
-
+foo1(); // => {bar: 'hello'}
+foo2(); // => undefined
 
 
