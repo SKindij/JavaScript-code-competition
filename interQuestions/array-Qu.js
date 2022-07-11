@@ -12,6 +12,16 @@ function duplicate(arr) {
 }
 duplicate([1,2,3,4,5]);  // => [1, 2, 3, 4, 5, 1, 2, 3, 4, 5]
     
+// What does console.log output?
+const set = new Set();
+  set.add(1);
+  set.add('js tests');
+  set.add({name: 'js testos'});
+for (let item of set) {
+  console.log(item + 2)
+}  // => 3, js tests2, [object Object]2
+
+
 
 
 
