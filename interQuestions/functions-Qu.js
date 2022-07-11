@@ -82,4 +82,25 @@ function foo2()
 foo1(); // => {bar: 'hello'}
 foo2(); // => undefined
 
+// What will be returned?
+var f = function() {
+  this.x = 5;
+    (function() {
+      this.x = 3;
+    })();
+  console.log(this.x);
+};
+f(); // => 3 
+
+const details = {
+  message: 'JavaScript Tests'
+}
+function getMessage() {
+  return this.message
+}
+console.log(getMessage.call(details)) // => JavaScript Tests
+
+
+
+
 

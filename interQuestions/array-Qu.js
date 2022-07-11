@@ -21,6 +21,15 @@ for (let item of set) {
   console.log(item + 2)
 }  // => 3, js tests2, [object Object]2
 
+class Something {}
+function AnotherSomething() {}
+  const s = new Something()
+  const as = new AnotherSomething()
+console.log(s.toString===Object.prototype.toString) // => true
+console.log(as.toString===Object.prototype.toString) // => true
+
+
+
 
 
 
