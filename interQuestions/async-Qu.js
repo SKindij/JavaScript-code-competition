@@ -20,8 +20,12 @@ Promise.resolve().then(function() {
 })
 console.log('four'); // => one   four   three   undefined   two
 
-
-
+// What will be returned?
+for(let i=0; i<10; i++) {
+  setTimeout(function() {
+    alert(i);
+  }, 100);
+} // => numbers from 0 to 9
 
 
 

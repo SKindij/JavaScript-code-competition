@@ -52,7 +52,16 @@ console.log(incra, ++incra, incra); // 10 11 11
 console.log(decra, --decra, decra); // 10 9 9
 
 let q = 5;
-alert(q++); // => 
+alert(q++); // => 5
+
+alert( '1'[0] ); // => 1
+
+console.log(+false); // => 0
+console.log(+true); // => 1
+console.log(+null); // => 0
+
+console.log(Number.isNaN('stringo')); // => false
+console.log(isNaN('stringo')); // => true
 
 
 

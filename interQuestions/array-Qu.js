@@ -33,6 +33,12 @@ let squares = [2, 4, 6].map(x => x * x);
 console.log(squares); // => [4, 16, 36]
 console.log(a + b); // => 20
 
+const getList = ([x, ...y]) => [x, y];
+  const list = [1, 2, 3, 4];
+console.log(getList(list)); // => [1, [2, 3, 4]]
+
+let aq = new Array(1, 2), bq = new Array(3);
+console.log(aq[0] + bq[0]); // => NaN
 
 
 
