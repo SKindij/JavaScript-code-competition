@@ -43,7 +43,16 @@ console.log(0.1 + 0.2 == 0.3); // => false
 // What value is returned from the following statement?
 "i'm a lasagna hog".split("").reverse().join(""); // => "goh angasal a m'i"
 
+let incro = 10, decro = 10;
+console.log(incro, incro++, incro); // 10 10 11
+console.log(decro, decro--, decro); // 10 10 9
 
+let incra = 10, decra = 10;
+console.log(incra, ++incra, incra); // 10 11 11
+console.log(decra, --decra, decra); // 10 9 9
+
+let q = 5;
+alert(q++); // => 
 
 
 

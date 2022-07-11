@@ -28,7 +28,10 @@ function AnotherSomething() {}
 console.log(s.toString===Object.prototype.toString) // => true
 console.log(as.toString===Object.prototype.toString) // => true
 
-
+let squares = [2, 4, 6].map(x => x * x);
+[a, b] = squares;
+console.log(squares); // => [4, 16, 36]
+console.log(a + b); // => 20
 
 
 
