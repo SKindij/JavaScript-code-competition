@@ -63,6 +63,9 @@ console.log(+null); // => 0
 console.log(Number.isNaN('stringo')); // => false
 console.log(isNaN('stringo')); // => true
 
+const numi = parseInt('7*6', 10);
+numi; // => 7
+
 
 
 

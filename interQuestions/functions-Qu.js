@@ -100,6 +100,17 @@ function getMessage() {
 }
 console.log(getMessage.call(details)) // => JavaScript Tests
 
+// What will be in result?
+function getInfo(member, year) {
+  member.name = 'Linda';
+  year = 1988;
+}
+const persona = {name: 'Sarah'};
+const birthSarah = '1987';
+getInfo(persona, birthSarah);
+console.log(persona, birthSarah); // => {name: 'Linda'} '1987'
+
+
 
 
 

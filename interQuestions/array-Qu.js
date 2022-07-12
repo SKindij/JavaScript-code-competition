@@ -40,6 +40,12 @@ console.log(getList(list)); // => [1, [2, 3, 4]]
 let aq = new Array(1, 2), bq = new Array(3);
 console.log(aq[0] + bq[0]); // => NaN
 
+// What will be in result?
+[1, 2, 3].map(num => {
+  if (typeof num === 'number') return;
+    return num * 2;
+}); // => [undefined, undefined, undefined]
+// Коли ми не повертаємо значення з функції, функція повертає undefined.
 
 
 
