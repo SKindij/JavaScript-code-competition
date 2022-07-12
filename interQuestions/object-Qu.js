@@ -21,10 +21,12 @@ const usero = {
 const organize = object => ({id: undefined, ...object});
 console.log(organize(usero)); // => ???
 
-
-
-
-
+// What will be in result?
+let personL = {name: 'Lidia'};
+  const members = [personL];
+    personL = null;
+console.log(members); // => [{ name: "Lydia" }]
+// Коли ви призначаєте посилання з однієї змінної до іншої, ви створюєте копію цього посилання. (Зверніть увагу, що у них не однакові посилання!)
 
 
 

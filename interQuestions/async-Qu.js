@@ -27,6 +27,22 @@ for(let i=0; i<10; i++) {
   }, 100);
 } // => numbers from 0 to 9
 
+// What will be in result?
+const firstPromise = new Promise((res, rej) => {
+  setTimeout(res, 500, 'one');
+});
+const secondPromise = new Promise((res, rej) => {
+  setTimeout(res, 100, 'two');
+});
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+// Коли ми надаємо кілька промісів методу Promise.race, він дозволяє/відхиляє перший проміс, який дозволяється/відхиляється.
+// => 2
+
+
+
+
+
+
 
 
 
