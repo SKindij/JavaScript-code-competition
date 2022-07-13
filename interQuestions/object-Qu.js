@@ -32,12 +32,16 @@ const personLi = {
   name: 'Linda',
   age: 31
 };
+
 for (const item in personLi) {
   console.log(item);
 } // => "name", "age"
 // У кожному циклі ми встановлюємо значення item рівним поточному ключу, яким він перебирається.
 
-
-
+const admin = {
+  admin: true,
+  ...personLi // spread operator
+};
+console.log(admin); // => {admin: true, name: 'Linda', age: 31}
 
 
