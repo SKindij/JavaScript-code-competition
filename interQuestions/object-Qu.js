@@ -44,4 +44,9 @@ const admin = {
 };
 console.log(admin); // => {admin: true, name: 'Linda', age: 31}
 
+Object.defineProperty(personLi, 'nation', {value: 'german'});
+console.log(personLi); // => {name: 'Linda', age: 31, nation: 'german'}
+console.log(Object.keys(personLi)); // => ['name', 'age']
+
+
 
