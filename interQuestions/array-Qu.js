@@ -50,3 +50,10 @@ console.log(aq[0] + bq[0]); // => NaN
 const ourSet = new Set ([1, 1, 2, 3, 3, 4]);
 console.log(ourSet); // => Set(4) {1, 2, 3, 4}
 
+const someNumbers = [1, 2, 3, 4, 5];
+const [y] = someNumbers;
+console.log(y); // => 1, because of destructuring: [a, b] = [1, 2];
+
+
+
+
