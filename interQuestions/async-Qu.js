@@ -38,8 +38,13 @@ Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
 // Коли ми надаємо кілька промісів методу Promise.race, він дозволяє/відхиляє перший проміс, який дозволяється/відхиляється.
 // => 2
 
-
-
+const lindsSettings = {
+  userName: 'Linda Bos',
+  level: 19,
+  health: 90
+};
+const lindaData = JSON.stringify(lindsSettings, ['level', 'health']);
+console.log(lindaData); // => {"level":19,"health":90}
 
 
 
