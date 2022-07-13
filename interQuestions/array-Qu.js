@@ -47,6 +47,6 @@ console.log(aq[0] + bq[0]); // => NaN
 }); // => [undefined, undefined, undefined]
 // Коли ми не повертаємо значення з функції, функція повертає undefined.
 
-
-
+const ourSet = new Set ([1, 1, 2, 3, 3, 4]);
+console.log(ourSet); // => Set(4) {1, 2, 3, 4}
 
