@@ -66,6 +66,12 @@ console.log(isNaN('stringo')); // => true
 const numi = parseInt('7*6', 10);
 numi; // => 7
 
+// What does console.log output?
+console.log(String.raw`Hello\nworld`);  // => Hello\nworld
+
+
+
+
 
 
 

@@ -46,7 +46,13 @@ const lindsSettings = {
 const lindaData = JSON.stringify(lindsSettings, ['level', 'health']);
 console.log(lindaData); // => {"level":19,"health":90}
 
-
+// What does console.log output?
+async function getData() {
+  return await Promise.resolve('I made it!');
+}
+const datos = getData();
+console.log(datos); // => Promise {<pending>}
+datos.then(res => console.log(res)) // => I made it!, Promise {<fulfilled>: undefined}
 
 
 
