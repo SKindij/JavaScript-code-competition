@@ -54,6 +54,20 @@ const someNumbers = [1, 2, 3, 4, 5];
 const [y] = someNumbers;
 console.log(y); // => 1, because of destructuring: [a, b] = [1, 2];
 
+// What will be in result?
+const value = { number: 10 };
+const multiPly = (x = {...value}) => {
+  console.log((x.number *=2));
+};
+multiPly(); // => 20
+multiPly(); // => 20
+multiPly(value); // => 20
+multiPly(value); // => 40
+
+// What does console.log output?
+[11, 12, 13, 14].reduce((x, y) => console.log(x, y)); // => 11 12, undefined 13 и undefined 14
+
+
 
 
 
